@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script>
+        function getNo(n) {
+            if (operator === '') {
+                firstNumber += n.toString();
+            }
+            else {
+                secondNumber += n.toString();
+            }
+
+        }
+
+        function gerOperator(o) {
+            operator = o;
+        }
+        function calculate() {
+            if (operator === "+") {
+                alert(+firstNumber + +secondNumber)
+            }
+            else if (operator === "-") {
+                alert(+firstNumber - +secondNumber)
+            }
+            else if (operator === "/") {
+                alert(+firstNumber / +secondNumber)
+            }
+            else if (operator === "*") {
+                alert(+firstNumber * +secondNumber)
+            }
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
+        }
+
+
+        var firstNumber = "";
+        var secondNumber = "";
+        var operator = '';
+
+
+    </script>
+
+    <style>
+
+        .cal {
+            width: 110px;
+            height: 150px;
+            margin: auto;
+            background-color: green;
+            border: black;
+        }
+
+        .no {
+            color: white;
+            background-color: blue;
+
+        }
+
+        .no:hover {
+            background-color: red;
+
+
+        }
+        .no:active{
+            background-color: black;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="cal">
+    <input onclick="getNo(1)" class="no" type="button" value="1">
+    <input onclick="getNo(2)" class="no" type="button" value="2">
+    <input onclick="getNo(3)" class="no" type="button" value="3">
+    <input onclick="gerOperator('*')" class="no" type="button" value="x">
+
+
+    <br><br>
+    <input onclick="getNo(4)" class="no" type="button" value="4">
+    <input onclick="getNo(5)" class="no" type="button" value="5">
+    <input onclick="getNo(6)" class="no" type="button" value="6">
+    <input onclick="gerOperator('+')" class="no" type="button" value="+">
+
+
+    <br><br>
+    <input onclick="getNo(7)" class="no" type="button" value="7">
+    <input onclick="getNo(8)" class="no" type="button" value="8">
+    <input onclick="getNo(9)" class="no" type="button" value="9">
+    <input onclick="gerOperator('-')" class="no" type="button" value="-">
+    <br><br>
+    <input onclick="gerOperator('/')" class="no" type="button" value="/">
+    <input onclick="getNo(0)" class="no" type="button" value="0">
+    <input onclick="getNo('.')" class="no" type="button" value=".">
+    <input onclick="calculate('=')" class="no" type="button" value="=">
+
+</div>
+
+
+</body>
+</html>
